@@ -1,0 +1,22 @@
+eureka.environment: prod
+
+---
+spring.profiles: area1
+
+server.port: 2001
+eureka.client.serviceUrl.defaultZone: http://127.0.0.1:2002/eureka/
+
+---
+spring.profiles: area2
+
+server.port: 2002
+eureka.client.serviceUrl.defaultZone: http://127.0.0.1:2001/eureka/
+
+---
+spring.profiles: test
+
+#https://github.com/spring-cloud/spring-cloud-netflix/issues/1511
+#spring.cloud.discovery.enabled: false
+eureka.client.register-with-eureka: false
+eureka.client.fetch-registry: false
+

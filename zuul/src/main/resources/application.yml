@@ -1,0 +1,17 @@
+eureka.client.serviceUrl.defaultZone: http://127.0.0.1:2001/eureka/,http://127.0.0.1:2002/eureka/
+zuul.routes.service: /api/**
+
+---
+spring.profiles: area1
+
+server.port: 3001
+
+---
+spring.profiles: area2
+
+server.port: 3002
+
+---
+spring.profiles: test
+
+spring.cloud.discovery.enabled: false
