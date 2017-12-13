@@ -11,6 +11,7 @@
     <modules>
         <module>eureka</module>
         <module>zuul</module>
+        <module>dashboard</module>
     </modules>
 
     <properties>
