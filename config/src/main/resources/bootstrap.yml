@@ -1,1 +1,5 @@
 spring.application.name: config
+
+spring.cloud.config.server.git:
+  uri: https://github.com/TheFirstClassCitizen/microservices-2018-config.git
+  clone-on-start: true
