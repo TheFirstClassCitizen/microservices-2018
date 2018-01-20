@@ -20,6 +20,7 @@ import org.s1p.CommonConfiguration;
 import org.s1p.ConfigProperties;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -37,14 +38,17 @@ public class S1pKafkaApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = new SpringApplicationBuilder(S1pKafkaApplication.class)
-			.web(false)
+			.web(true)
 			.run(args);
+
 		TestBean testBean = context.getBean(TestBean.class);
 		testBean.send("foo");
+		System.out.println("End");
 	}
 
 	@Bean
 	public TestBean test() {
+		System.out.println("Loaded");
 		return new TestBean();
 	}
 
@@ -58,6 +62,7 @@ public class S1pKafkaApplication {
 
 		public void send(String foo) {
 			this.template.send(this.configProperties.getTopic(), foo);
+			System.out.println("Sent");
 		}
 
 	}

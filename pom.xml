@@ -15,6 +15,8 @@
         <module>dashboard</module>
         <module>basic</module>
         <module>kafka_publisher</module>
+        <module>kafka_example2</module>
+        <module>kafka_ms</module>
     </modules>
 
     <properties>
