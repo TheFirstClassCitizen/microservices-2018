@@ -17,6 +17,7 @@
         <module>kafka_publisher</module>
         <module>kafka_example2</module>
         <module>kafka_ms</module>
+        <module>kafka_ms2</module>
     </modules>
 
     <properties>
